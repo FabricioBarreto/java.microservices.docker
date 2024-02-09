@@ -18,14 +18,4 @@ Este proyecto es una implementación de microservicios en Java utilizando conten
 
 - **Hibernate:** Herramienta de mapeo objeto-relacional para el acceso a la base de datos.
 
-## Estructura del Proyecto
-
-Explicación breve de la estructura del proyecto y cómo están organizados los microservicios.
-
-## Configuración y Uso
-
-Instrucciones sobre cómo configurar y ejecutar la aplicación, así como cualquier configuración específica que los usuarios puedan necesitar.
-
-## Contribuciones
-
-¡Contribuciones y sugerencias son bienvenidas! Si encuentras algún problema o tienes ideas para mejorar el proyecto, no dudes en abrir un problema o enviar una solicitud de extracción.
+- **Maven:** Como gestor de proyecto y dependencias.
