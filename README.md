@@ -18,47 +18,56 @@ Este proyecto es una implementación de microservicios en Java que utiliza conte
 
 ---
 
-## EndPoints
+## Funcionalidades
+
+- Permite la creación y listado de productos
+- Control de inventario
+- Gestión de órdenes
+
+## Endpoints
 
 ### Product
 - **Add product:** `POST` "localhost:8081/api/product"
-  Datos de prueba:
-  ```json
-  {
-    "sku": "00002",
-    "name": "PC Gamer 2",
-    "description": "Best PC 2",
-    "price": "200000",
-    "status": true
-  }
-  
+  - Datos de prueba:
+    ```json
+    {
+      "sku": "00002",
+      "name": "PC Gamer 2",
+      "description": "Best PC 2",
+      "price": 200000,
+      "status": true
+    }
+    ```
+
 - **List all products:** `GET` "localhost:8081/api/product"
 
 ### Inventory
 - **Is in stock:** `POST` "localhost:8083/api/inventory/in-stock"
-  Datos de prueba:
-  ```json
-  {
-      "id": "1",
-      "sku": "000001",
-      "price": 10.00,
-      "quantity": 2
-  }
+  - Datos de prueba:
+    ```json
+    {
+        "id": 1,
+        "sku": "000001",
+        "price": 10.00,
+        "quantity": 2
+    }
+    ```
 
 - **Find by SKU:** `GET` "localhost:8083/api/inventory/{sku}"
 
 ### Order
 - **Place order:** `POST` "localhost:8082/api/order"
-  Datos de prueba:
-  ```json
-  {
-    "orderItems": [
-      {
-        "sku": "000001",
-        "price": "20.00",
-        "quantity": 2
-      }
-    ]
-  }
+  - Datos de prueba:
+    ```json
+    {
+      "orderItems": [
+        {
+          "sku": "000001",
+          "price": 20.00,
+          "quantity": 2
+        }
+      ]
+    }
+    ```
 
 - **Get all orders:** `GET` "localhost:8082/api/order"
