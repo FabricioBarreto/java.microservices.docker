@@ -1,22 +1,64 @@
-# Java Microservices Docker Project
+# Java Microservices
 
-Este proyecto es una implementación de microservicios en Java utilizando contenedores Docker para facilitar la ejecución y la gestión de servicios independientes. La arquitectura de microservicios permite construir aplicaciones escalables y flexibles al dividir la funcionalidad en servicios pequeños y autónomos.
+Este proyecto es una implementación de microservicios en Java que utiliza contenedores Docker para simplificar la ejecución y la gestión de servicios independientes. La arquitectura de microservicios permite construir aplicaciones escalables y flexibles al dividir la funcionalidad en servicios pequeños y autónomos.
 
-## Características principales
+## Características Principales
 
-- **Microservicios en Java:** La aplicación está compuesta por servicios Java independientes que se comunican entre sí para lograr una arquitectura modular y fácilmente escalable.
+- **Java 17:** La aplicación está desarrollada utilizando Java 17, siguiendo las mejores prácticas.
 
-- **Contenedores Docker:** Cada microservicio se empaqueta en un contenedor Docker, lo que facilita la implementación, distribución y escalabilidad de la aplicación.
+- **Base de datos:** Se utiliza MySQL y Postgres para el almacenamiento de los datos.
 
-- **Gestión de dependencias con Maven:** Utilizamos Maven para gestionar las dependencias y construir la aplicación de manera eficiente.
+- **Microservicios en Java:** La aplicación está compuesta por servicios Java independientes que se comunican entre sí, logrando una arquitectura modular y fácilmente escalable.
 
-## Tecnologías utilizadas
+- **Contenedores Docker:** Cada microservicio se empaqueta en un contenedor Docker, facilitando la implementación, distribución y escalabilidad de la aplicación.
 
-- **Spring Boot:** Framework de desarrollo rápido para crear microservicios en Java.
+- **Gestión de dependencias con Maven:** Se utiliza Maven para gestionar las dependencias y construir la aplicación de manera eficiente.
 
-- **Docker:** Plataforma de contenedores que simplifica la implementación y ejecución de aplicaciones.
+- **Postman:** Se emplea Postman para verificar la funcionalidad de los endpoints.
 
-- **Hibernate:** Herramienta de mapeo objeto-relacional para el acceso a la base de datos.
+---
 
-- **Maven:** Gestor de proyecto y dependencias que facilita la construcción y organización del proyecto.
+## EndPoints
 
+### Product
+- **Add product:** `POST` "localhost:8081/api/product"
+  Datos de prueba:
+  ```json
+  {
+    "sku": "00002",
+    "name": "PC Gamer 2",
+    "description": "Best PC 2",
+    "price": "200000",
+    "status": true
+  }
+  
+- **List all products:** `GET` "localhost:8081/api/product"
+
+### Inventory
+- **Is in stock:** `POST` "localhost:8083/api/inventory/in-stock"
+  Datos de prueba:
+  ```json
+  {
+      "id": "1",
+      "sku": "000001",
+      "price": 10.00,
+      "quantity": 2
+  }
+
+- **Find by SKU:** `GET` "localhost:8083/api/inventory/{sku}"
+
+### Order
+- **Place order:** `POST` "localhost:8082/api/order"
+  Datos de prueba:
+  ```json
+  {
+    "orderItems": [
+      {
+        "sku": "000001",
+        "price": "20.00",
+        "quantity": 2
+      }
+    ]
+  }
+
+- **Get all orders:** `GET` "localhost:8082/api/order"
