@@ -18,4 +18,5 @@ Este proyecto es una implementación de microservicios en Java utilizando conten
 
 - **Hibernate:** Herramienta de mapeo objeto-relacional para el acceso a la base de datos.
 
-- **Maven:** Como gestor de proyecto y dependencias.
+- **Maven:** Gestor de proyecto y dependencias que facilita la construcción y organización del proyecto.
+
